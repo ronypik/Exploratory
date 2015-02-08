@@ -15,39 +15,13 @@ subs$Date <- as.Date(subs$Date, format="%d/%m/%Y")
 subs$Global_active_power <- as.numeric(as.character(subs$Global_active_power))
 
 
-
 with(subs,plot(strptime(paste(Date,Time),"%Y-%m-%d %H:%M:%S"),Global_active_power,type='l',xlab="",ylab = 'Global Active Power (kilowatts)'))
-
-
-
-
-x = as.factor(c("Sun","Mon","Tue","Wed","Thu","Fri","Sat")[as.POSIXlt(subs$Date)$wday + 1])
-
-?plot()
-
-
-
-
-
-dtTime <- as.numeric(newsubs$timestamp - trunc(newsubs$timestamp, "days"))
-
-
-
-plot(  as.numeric(newsubs$timestamp),      
-       newsubs$Global_active_power
-)
-
-
-hist(as.numeric(subs$Global_active_power)/500,
-     breaks=seq(0,12,by=0.5), col = "red", axes=FALSE, 
-     ylab="Frequency", xlab = "Global Active Power (kilowatts)", 
-     main = "Global Active Power" )
 
 axis(side=1, at=seq(0, 6, by=2))
 axis(side=2, at=seq(0, 1200, by=200))
 setwd("C:/DB/")
 
-dev.copy(png, file= "task1.png",width = 480, height = 480, units = "px", pointsize = 12  )
+dev.copy(png, file= "task2.png",width = 480, height = 480, units = "px", pointsize = 12  )
 dev.off()
 
 

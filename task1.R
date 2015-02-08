@@ -1,4 +1,5 @@
 household_power_consumption <- read.csv("C:/DB/household_power_consumption.txt", sep=";")
+Sys.setlocale("LC_TIME", "English")
 
 # We will only be using data from the dates 2007-02-01 and 2007-02-02.
 
